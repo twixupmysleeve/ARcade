@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 import SceneKit
 import ARKit
 
@@ -71,4 +72,16 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
     }
+}
+
+struct ViewControllerRepresentable: UIViewControllerRepresentable {
+    
+    func makeUIViewController(context: Context) -> ViewController {
+        return ViewController()
+    }
+    
+    func updateUIViewController(_ uiViewController: ViewController, context: Context) {
+        
+    }
+    
 }
