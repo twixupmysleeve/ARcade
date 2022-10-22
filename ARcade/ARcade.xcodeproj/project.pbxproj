@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7D8C32F429038F23004F2BD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8C32F329038F23004F2BD6 /* AppDelegate.swift */; };
+		7D8C32F629038F23004F2BD6 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D8C32F529038F23004F2BD6 /* art.scnassets */; };
+		7D8C32F829038F23004F2BD6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8C32F729038F23004F2BD6 /* ViewController.swift */; };
+		7D8C32FB29038F23004F2BD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D8C32F929038F23004F2BD6 /* Main.storyboard */; };
+		7D8C32FD29038F23004F2BD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D8C32FC29038F23004F2BD6 /* Assets.xcassets */; };
+		7D8C330029038F23004F2BD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D8C32FE29038F23004F2BD6 /* LaunchScreen.storyboard */; };
+		7D8C330A29038F23004F2BD6 /* ARcadeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8C330929038F23004F2BD6 /* ARcadeTests.swift */; };
+		7D8C331429038F23004F2BD6 /* ARcadeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8C331329038F23004F2BD6 /* ARcadeUITests.swift */; };
+		7D8C331629038F23004F2BD6 /* ARcadeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8C331529038F23004F2BD6 /* ARcadeUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7D8C330629038F23004F2BD6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7D8C32E829038F23004F2BD6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7D8C32EF29038F23004F2BD6;
+			remoteInfo = ARcade;
+		};
+		7D8C331029038F23004F2BD6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7D8C32E829038F23004F2BD6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7D8C32EF29038F23004F2BD6;
+			remoteInfo = ARcade;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7D8C32F029038F23004F2BD6 /* ARcade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARcade.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D8C32F329038F23004F2BD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7D8C32F529038F23004F2BD6 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		7D8C32F729038F23004F2BD6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7D8C32FA29038F23004F2BD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7D8C32FC29038F23004F2BD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7D8C32FF29038F23004F2BD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7D8C330529038F23004F2BD6 /* ARcadeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARcadeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D8C330929038F23004F2BD6 /* ARcadeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARcadeTests.swift; sourceTree = "<group>"; };
+		7D8C330F29038F23004F2BD6 /* ARcadeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARcadeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D8C331329038F23004F2BD6 /* ARcadeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARcadeUITests.swift; sourceTree = "<group>"; };
+		7D8C331529038F23004F2BD6 /* ARcadeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARcadeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7D8C32ED29038F23004F2BD6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D8C330229038F23004F2BD6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D8C330C29038F23004F2BD6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7D8C32E729038F23004F2BD6 = {
+			isa = PBXGroup;
+			children = (
+				7D8C32F229038F23004F2BD6 /* ARcade */,
+				7D8C330829038F23004F2BD6 /* ARcadeTests */,
+				7D8C331229038F23004F2BD6 /* ARcadeUITests */,
+				7D8C32F129038F23004F2BD6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7D8C32F129038F23004F2BD6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7D8C32F029038F23004F2BD6 /* ARcade.app */,
+				7D8C330529038F23004F2BD6 /* ARcadeTests.xctest */,
+				7D8C330F29038F23004F2BD6 /* ARcadeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7D8C32F229038F23004F2BD6 /* ARcade */ = {
+			isa = PBXGroup;
+			children = (
+				7D8C32F329038F23004F2BD6 /* AppDelegate.swift */,
+				7D8C32F529038F23004F2BD6 /* art.scnassets */,
+				7D8C32F729038F23004F2BD6 /* ViewController.swift */,
+				7D8C32F929038F23004F2BD6 /* Main.storyboard */,
+				7D8C32FC29038F23004F2BD6 /* Assets.xcassets */,
+				7D8C32FE29038F23004F2BD6 /* LaunchScreen.storyboard */,
+			);
+			path = ARcade;
+			sourceTree = "<group>";
+		};
+		7D8C330829038F23004F2BD6 /* ARcadeTests */ = {
+			isa = PBXGroup;
+			children = (
+				7D8C330929038F23004F2BD6 /* ARcadeTests.swift */,
+			);
+			path = ARcadeTests;
+			sourceTree = "<group>";
+		};
+		7D8C331229038F23004F2BD6 /* ARcadeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7D8C331329038F23004F2BD6 /* ARcadeUITests.swift */,
+				7D8C331529038F23004F2BD6 /* ARcadeUITestsLaunchTests.swift */,
+			);
+			path = ARcadeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7D8C32EF29038F23004F2BD6 /* ARcade */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D8C331929038F23004F2BD6 /* Build configuration list for PBXNativeTarget "ARcade" */;
+			buildPhases = (
+				7D8C32EC29038F23004F2BD6 /* Sources */,
+				7D8C32ED29038F23004F2BD6 /* Frameworks */,
+				7D8C32EE29038F23004F2BD6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ARcade;
+			productName = ARcade;
+			productReference = 7D8C32F029038F23004F2BD6 /* ARcade.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7D8C330429038F23004F2BD6 /* ARcadeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D8C331C29038F23004F2BD6 /* Build configuration list for PBXNativeTarget "ARcadeTests" */;
+			buildPhases = (
+				7D8C330129038F23004F2BD6 /* Sources */,
+				7D8C330229038F23004F2BD6 /* Frameworks */,
+				7D8C330329038F23004F2BD6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7D8C330729038F23004F2BD6 /* PBXTargetDependency */,
+			);
+			name = ARcadeTests;
+			productName = ARcadeTests;
+			productReference = 7D8C330529038F23004F2BD6 /* ARcadeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7D8C330E29038F23004F2BD6 /* ARcadeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D8C331F29038F23004F2BD6 /* Build configuration list for PBXNativeTarget "ARcadeUITests" */;
+			buildPhases = (
+				7D8C330B29038F23004F2BD6 /* Sources */,
+				7D8C330C29038F23004F2BD6 /* Frameworks */,
+				7D8C330D29038F23004F2BD6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7D8C331129038F23004F2BD6 /* PBXTargetDependency */,
+			);
+			name = ARcadeUITests;
+			productName = ARcadeUITests;
+			productReference = 7D8C330F29038F23004F2BD6 /* ARcadeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7D8C32E829038F23004F2BD6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					7D8C32EF29038F23004F2BD6 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+					7D8C330429038F23004F2BD6 = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = 7D8C32EF29038F23004F2BD6;
+					};
+					7D8C330E29038F23004F2BD6 = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = 7D8C32EF29038F23004F2BD6;
+					};
+				};
+			};
+			buildConfigurationList = 7D8C32EB29038F23004F2BD6 /* Build configuration list for PBXProject "ARcade" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7D8C32E729038F23004F2BD6;
+			productRefGroup = 7D8C32F129038F23004F2BD6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7D8C32EF29038F23004F2BD6 /* ARcade */,
+				7D8C330429038F23004F2BD6 /* ARcadeTests */,
+				7D8C330E29038F23004F2BD6 /* ARcadeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7D8C32EE29038F23004F2BD6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D8C32F629038F23004F2BD6 /* art.scnassets in Resources */,
+				7D8C330029038F23004F2BD6 /* LaunchScreen.storyboard in Resources */,
+				7D8C32FD29038F23004F2BD6 /* Assets.xcassets in Resources */,
+				7D8C32FB29038F23004F2BD6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D8C330329038F23004F2BD6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D8C330D29038F23004F2BD6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7D8C32EC29038F23004F2BD6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D8C32F829038F23004F2BD6 /* ViewController.swift in Sources */,
+				7D8C32F429038F23004F2BD6 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D8C330129038F23004F2BD6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D8C330A29038F23004F2BD6 /* ARcadeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D8C330B29038F23004F2BD6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D8C331629038F23004F2BD6 /* ARcadeUITestsLaunchTests.swift in Sources */,
+				7D8C331429038F23004F2BD6 /* ARcadeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7D8C330729038F23004F2BD6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7D8C32EF29038F23004F2BD6 /* ARcade */;
+			targetProxy = 7D8C330629038F23004F2BD6 /* PBXContainerItemProxy */;
+		};
+		7D8C331129038F23004F2BD6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7D8C32EF29038F23004F2BD6 /* ARcade */;
+			targetProxy = 7D8C331029038F23004F2BD6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7D8C32F929038F23004F2BD6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7D8C32FA29038F23004F2BD6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7D8C32FE29038F23004F2BD6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7D8C32FF29038F23004F2BD6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7D8C331729038F23004F2BD6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7D8C331829038F23004F2BD6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7D8C331A29038F23004F2BD6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DPAY85Q94G;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = shivomdhamija.ARcade;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7D8C331B29038F23004F2BD6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DPAY85Q94G;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = shivomdhamija.ARcade;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7D8C331D29038F23004F2BD6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DPAY85Q94G;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = shivomdhamija.ARcadeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ARcade.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ARcade";
+			};
+			name = Debug;
+		};
+		7D8C331E29038F23004F2BD6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DPAY85Q94G;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = shivomdhamija.ARcadeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ARcade.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ARcade";
+			};
+			name = Release;
+		};
+		7D8C332029038F23004F2BD6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DPAY85Q94G;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = shivomdhamija.ARcadeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ARcade;
+			};
+			name = Debug;
+		};
+		7D8C332129038F23004F2BD6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DPAY85Q94G;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = shivomdhamija.ARcadeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ARcade;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7D8C32EB29038F23004F2BD6 /* Build configuration list for PBXProject "ARcade" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D8C331729038F23004F2BD6 /* Debug */,
+				7D8C331829038F23004F2BD6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D8C331929038F23004F2BD6 /* Build configuration list for PBXNativeTarget "ARcade" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D8C331A29038F23004F2BD6 /* Debug */,
+				7D8C331B29038F23004F2BD6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D8C331C29038F23004F2BD6 /* Build configuration list for PBXNativeTarget "ARcadeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D8C331D29038F23004F2BD6 /* Debug */,
+				7D8C331E29038F23004F2BD6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D8C331F29038F23004F2BD6 /* Build configuration list for PBXNativeTarget "ARcadeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D8C332029038F23004F2BD6 /* Debug */,
+				7D8C332129038F23004F2BD6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7D8C32E829038F23004F2BD6 /* Project object */;
+}
