@@ -46,10 +46,10 @@ class ARCadeARViewController: UIViewController, ARSessionDelegate, MCSessionDele
     var guestStriker: ModelEntity!
     
     var table: ModelEntity!
-    var wallFront1: ModelEntity!
-    var wallFront2: ModelEntity!
-    var wallBack1: ModelEntity!
-    var wallBack2: ModelEntity!
+    //    var wallFront1: ModelEntity!
+    //    var wallFront2: ModelEntity!
+    //    var wallBack1: ModelEntity!
+    //    var wallBack2: ModelEntity!
     var wallLeft: ModelEntity!
     var wallRight: ModelEntity!
     
@@ -109,6 +109,10 @@ class ARCadeARViewController: UIViewController, ARSessionDelegate, MCSessionDele
         arView.session.run(config, options: [])
         setupTable()
         
+        arView.addSubview(startButton)
+        
+        startButton.addTarget(self, action: #selector(startGame(_sender:)), for: .touchUpInside)
+        
         hapticsManager.createEngine()
         coachingOverlay.goal = .horizontalPlane
         coachingOverlay.activatesAutomatically = true
@@ -127,40 +131,60 @@ class ARCadeARViewController: UIViewController, ARSessionDelegate, MCSessionDele
         super.viewWillDisappear(animated)
     }
     
+    var startButton:UIButton = {
+        var bu = UIButton(frame: CGRect(x: 100, y: 200, width: 200, height: 50))
+        bu.layer.cornerRadius = 20
+        bu.backgroundColor = .white
+        print("button")
+        return bu
+    }()
+    
+    @objc
+    func startGame(_sender: UIButton) {
+        puck.addForce([15,0,10], relativeTo: puck)
+    }
+    
     func setupTable() {
-        puck = sceneElement.puck?.children.first as? ModelEntity
-        hostStriker = sceneElement.hostStriker?.children.first as? ModelEntity
-        guestStriker = sceneElement.guestStriker?.children.first as? ModelEntity
+        puck = sceneElement.puck?.children.first as! ModelEntity
+        
+        hostStriker = ModelEntity(mesh: .generateBox(width: 0.05, height: 0.01, depth: 0.01))
+        guestStriker = ModelEntity(mesh: .generateBox(width: 0.05, height: 0.01, depth: 0.01))
         puck.generateCollisionShapes(recursive: true)
-        puck.physicsBody = PhysicsBodyComponent(massProperties: .default, material:  .generate(friction: 0.001, restitution: 0.99), mode: .dynamic)
+        
+        puck.physicsBody = PhysicsBodyComponent(massProperties: .default, material: .generate(friction: 0, restitution: 1), mode: .dynamic)
         
         hostStriker.generateCollisionShapes(recursive: true)
-        hostStriker.physicsBody = PhysicsBodyComponent(massProperties: .default, material: .default, mode: .kinematic)
+        
+        var strikerPhys = PhysicsBodyComponent(massProperties: .default, material: .default, mode: .kinematic)
+        strikerPhys.isTranslationLocked = (false, true, true)
+        
+        hostStriker.physicsBody = strikerPhys
         
         guestStriker.generateCollisionShapes(recursive: true)
         guestStriker.physicsBody = PhysicsBodyComponent(massProperties: .default, material: .default, mode: .kinematic)
         
-        table = sceneElement.table?.children.first as? ModelEntity
+        table = sceneElement.table?.children.first as! ModelEntity
         table.generateCollisionShapes(recursive: true)
-        table.physicsBody = PhysicsBodyComponent(massProperties: .default, material: .generate(friction: 0, restitution: 0), mode: .static)
+        table.physicsBody = PhysicsBodyComponent(massProperties: .default, material: .generate(friction: 0, restitution: 1), mode: .static)
         
-        wallBack1 = sceneElement.wallBack1?.children.first as? ModelEntity
-        wallBack2 = sceneElement.wallBack2?.children.first as? ModelEntity
-        wallFront1 = sceneElement.wallFront1?.children.first as? ModelEntity
-        wallFront2 = sceneElement.wallFront2?.children.first as? ModelEntity
-        wallLeft = sceneElement.wallLeft?.children.first as? ModelEntity
-        wallRight = sceneElement.wallRight?.children.first as? ModelEntity
+        //        wallBack1 = sceneElement.wallBack1?.children.first as! ModelEntity
+        //        wallBack2 = sceneElement.wallBack2?.children.first as? ModelEntity
+        //        wallFront1 = sceneElement.wallFront1?.children.first as! ModelEntity
+        //        wallFront2 = sceneElement.wallFront2?.children.first as! ModelEntity
+        wallLeft = sceneElement.wallLeft?.children.first as! ModelEntity
+        wallRight = sceneElement.wallRight?.children.first as! ModelEntity
         
         wallLeft.generateCollisionShapes(recursive: true)
         wallRight.generateCollisionShapes(recursive: true)
-        wallBack1.generateCollisionShapes(recursive: true)
-        wallBack2.generateCollisionShapes(recursive: true)
-        wallFront1.generateCollisionShapes(recursive: true)
-        wallFront2.generateCollisionShapes(recursive: true)
+        //        wallBack1.generateCollisionShapes(recursive: true)
+        //        wallBack2.generateCollisionShapes(recursive: true)
+        //        wallFront1.generateCollisionShapes(recursive: true)
+        //        wallFront2.generateCollisionShapes(recursive: true)
         
-        wallLeft.physicsBody = PhysicsBodyComponent(massProperties: .default, material: .generate(friction: 0.01, restitution: 0.99), mode: .kinematic)
+        wallLeft.physicsBody = PhysicsBodyComponent(massProperties: .default, material: .generate(friction: 0, restitution: 1), mode: .kinematic)
+        wallRight.physicsBody = PhysicsBodyComponent(massProperties: .default, material: .generate(friction: 0, restitution: 1), mode: .kinematic)
         
-        let goalModel = ModelEntity(mesh: .generateBox(size: [0.17,0.01,0.02]), materials: [SimpleMaterial(color: .black, isMetallic: true)])
+        let goalModel = ModelEntity(mesh: .generateBox(size: [0.2,0.01,0.01]), materials: [SimpleMaterial(color: .black, isMetallic: true)])
         
         
         hostGoal = goalModel.clone(recursive: true)
@@ -204,44 +228,46 @@ class ARCadeARViewController: UIViewController, ARSessionDelegate, MCSessionDele
             // The simple bounce of the walls and puck.
             
             if event.entityA == wallLeft, event.entityB == puck {
-                puck.addForce([0.1,0,0], relativeTo: puck)
+                puck.addForce([10,0,0], relativeTo: puck)
                 audioPlaybackController?.play()
                 
             }
             
             if event.entityA == wallRight, event.entityB == puck {
-                puck.addForce([-0.1,0,0], relativeTo: puck)
+                puck.addForce([-10,0,0], relativeTo: puck)
                 audioPlaybackController?.play()
                 
             }
             
-            if event.entityA == wallFront1, event.entityB == puck {
-                puck.addForce([0,0,0.1], relativeTo: puck)
-                audioPlaybackController?.play()
-                
-            }
-            
-            if event.entityA == wallFront2, event.entityB == puck {
-                puck.addForce([0,0,0.1], relativeTo: puck)
-                audioPlaybackController?.play()
-                
-            }
-            
-            if event.entityA == wallBack1, event.entityB == puck {
-                puck.addForce([0,0,-0.1], relativeTo: puck)
-                audioPlaybackController?.play()
-            }
-            
-            if event.entityA == wallBack2, event.entityB == puck {
-                puck.addForce([0,0,-0.1], relativeTo: puck)
-                audioPlaybackController?.play()
-            }
+            //            if event.entityA == wallFront1, event.entityB == puck {
+            //                puck.addForce([0,0,10], relativeTo: puck)
+            //                audioPlaybackController?.play()
+            //
+            //            }
+            //
+            //            if event.entityA == wallFront2, event.entityB == puck {
+            //                puck.addForce([0,0,10], relativeTo: puck)
+            //                audioPlaybackController?.play()
+            //
+            //            }
+            //
+            //            if event.entityA == wallBack1, event.entityB == puck {
+            //                puck.addForce([0,0,-10], relativeTo: puck)
+            //                audioPlaybackController?.play()
+            //            }
+            //
+            //            if event.entityA == wallBack2, event.entityB == puck {
+            //                puck.addForce([0,0,-10], relativeTo: puck)
+            //                audioPlaybackController?.play()
+            //            }
             
             if event.entityA == hostStriker, event.entityB == puck {
+                puck.addForce([0,0,-12], relativeTo: puck)
                 audioPlaybackController?.play()
             }
             
             if event.entityA == guestStriker, event.entityB == puck {
+                puck.addForce([0,0,12], relativeTo: puck)
                 audioPlaybackController?.play()
             }
             
@@ -266,7 +292,7 @@ class ARCadeARViewController: UIViewController, ARSessionDelegate, MCSessionDele
         
         // Capture table size for turning back the puck when it is out of table.
         
-        let tableSize = table.model!.mesh.bounds.extents
+        let tableSize = table.model!.mesh.bounds.extents * 2
         
         tableMinX = -tableSize.x / 2
         tableMaxX = tableSize.x / 2
@@ -282,9 +308,10 @@ class ARCadeARViewController: UIViewController, ARSessionDelegate, MCSessionDele
                 tableSharedFromHost()
             }
         }
+        
     }
     
-    @objc func tapped(sender: UITapGestureRecognizer) {
+    @objc public func tapped(sender: UITapGestureRecognizer) {
         // Place the table on the tapped plane.
         guard !model.tableAdded, model.isHost ?? true else {
             // If the table have alredy been added or this device is the guest, do nothing.
@@ -301,30 +328,32 @@ class ARCadeARViewController: UIViewController, ARSessionDelegate, MCSessionDele
             anchor = AnchorEntity(anchor: arAnchor)
             
             // Place table and puck in the anchor.
-            wallFront1.position = [-0.1666,0.01,-0.551]
-            wallFront2.position = [0.1686,0.01,-0.551]
-            wallBack1.position = [-0.0666,0.01,0.151]
-            wallBack2.position = [0.067,0.01,0.151]
+            //            wallFront1.position = [-0.0666,0.01,-0.151]
+            //            wallFront2.position = [0.0686,0.01,-0.151]
+            //            wallBack1.position = [-0.0666,0.01,0.151]
+            //            wallBack2.position = [0.067,0.01,0.151]
             wallLeft.position = [-0.099,0.01,0]
             wallRight.position = [0.101,0.01,0]
             
-            wallFront1.scale = [0.94,0.94,0.94]
-            wallFront2.scale = [0.94,0.94,0.94]
-            wallBack1.scale = [0.94,0.94,0.94]
-            wallBack2.scale = [0.94,0.94,0.94]
+            //            wallFront1.scale = [0.94,0.94,0.94]
+            //            wallFront2.scale = [0.94,0.94,0.94]
+            //            wallBack1.scale = [0.94,0.94,0.94]
+            //            wallBack2.scale = [0.94,0.94,0.94]
             hostStriker.position = [0.0072,0.01,0.1084]
             guestStriker.position = [0.0024,0.01,-0.1019]
             hostGoal.position = [0,0, -0.15]
             guestGoal.position = [0,0, 0.15]
             
             anchor!.addChild(table)
-            anchor!.addChild(wallFront1)
-            anchor!.addChild(wallFront2)
-            anchor!.addChild(wallBack1)
-            anchor!.addChild(wallBack2)
+            //            anchor!.addChild(wallFront1)
+            //            anchor!.addChild(wallFront2)
+            //            anchor!.addChild(wallBack1)
+            //            anchor!.addChild(wallBack2)
             anchor!.addChild(wallLeft)
             anchor!.addChild(wallRight)
+            
             anchor!.addChild(hostStriker)
+            
             anchor!.addChild(guestStriker)
             anchor!.addChild(puck)
             anchor!.addChild(hostGoal)
@@ -335,8 +364,12 @@ class ARCadeARViewController: UIViewController, ARSessionDelegate, MCSessionDele
             
             arView.scene.addAnchor(anchor!)
             
+            //            var ges = EntityTranslationGestureRecognizer(target: self, action: #selector(<#T##@objc method#>))
             // Set gesture to the host striker.
-            arView.installGestures(.translation, for: hostStriker!)
+            //            arView.installGestures(.translation, for: hostStriker)
+            
+            //            hostStriker.transform = session.currentFrame?.camera.transform
+            
             
             model.tableAdded = true
             gameStateChanged()
@@ -365,11 +398,11 @@ class ARCadeARViewController: UIViewController, ARSessionDelegate, MCSessionDele
                 return
             }
             let positionDiff = puck.position - guestStriker.position
-            guestStriker.move(to: Transform(translation: positionDiff), relativeTo: guestStriker, duration: 1, timingFunction: .easeInOut)
+            guestStriker.move(to: Transform(translation: [positionDiff.x, 0, 0]), relativeTo: guestStriker, duration: 1, timingFunction: .easeInOut)
             
             Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { _timer in
-                let backPositionDiff = [Float.random(in: -0.1...0.1),0.01,-0.1019] - self.guestStriker.position
-                self.guestStriker.move(to: Transform(translation:backPositionDiff), relativeTo: self.guestStriker, duration: 0.75, timingFunction: .easeOut)
+                let backPositionDiff = [Float.random(in: -0.1...0.1),0.01,-0.1019] - guestStriker.position
+                guestStriker.move(to: Transform(translation:backPositionDiff), relativeTo: guestStriker, duration: 0.75, timingFunction: .easeOut)
             }
         })
     }
@@ -455,9 +488,12 @@ class ARCadeARViewController: UIViewController, ARSessionDelegate, MCSessionDele
             }
             guestStriker.requestOwnership { [self] result in
                 if result == .granted {
+                    print("started")
                     arView.installGestures(.translation, for: arView.scene.anchors.first?.children.first(where: {$0.name == "guestStriker"})! as! HasCollision)
                     nonPlayerCharacterTimer?.invalidate()
+                    
                 }
+                
             }
         }
     }
@@ -473,15 +509,26 @@ class ARCadeARViewController: UIViewController, ARSessionDelegate, MCSessionDele
     // MARK: - ARSessionDelegate
     
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
+        
+        
+        
         if tableMinX != nil {
             let out:Bool = puck.position.x < tableMinX! || puck.position.x > tableMaxX! || puck.position.z < tableMinZ! || puck.position.z > tableMaxZ!
             if out {
                 puck.removeFromParent()
                 puck.position = [0,0.05,0]
                 puck.orientation = simd_quatf(angle: 0, axis: [1,1,1])
+                puck.addForce([-5,0,10], relativeTo: puck)
+                // TODO: Randomize direction but keep force same
                 anchor?.addChild(puck)
             }
         }
+        
+        guard let arCamera = session.currentFrame?.camera else { return }
+        
+        
+        hostStriker.transform.matrix.columns.3.x = (session.currentFrame?.camera.transform)!.columns.3.x
+        
     }
     
     func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
@@ -506,7 +553,7 @@ class ARCadeARViewController: UIViewController, ARSessionDelegate, MCSessionDele
                 
                 // [Guest]
                 hostTableAdded()
-
+                
             case "guestTableAdded" :
                 // [Host] The table shared with the guest.
                 model.tableAddedInGuestDevice = true
@@ -568,4 +615,5 @@ class ARCadeARViewController: UIViewController, ARSessionDelegate, MCSessionDele
     func browser(_ browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
         
     }
+    
 }
