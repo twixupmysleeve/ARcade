@@ -135,7 +135,6 @@ class ARCadeARViewController: UIViewController, ARSessionDelegate, MCSessionDele
         var bu = UIButton(frame: CGRect(x: 100, y: 200, width: 200, height: 50))
         bu.layer.cornerRadius = 20
         bu.backgroundColor = .white
-        print("button")
         return bu
     }()
     
@@ -292,7 +291,7 @@ class ARCadeARViewController: UIViewController, ARSessionDelegate, MCSessionDele
         
         // Capture table size for turning back the puck when it is out of table.
         
-        let tableSize = table.model!.mesh.bounds.extents * 2
+        let tableSize = table.model!.mesh.bounds.extents
         
         tableMinX = -tableSize.x / 2
         tableMaxX = tableSize.x / 2
@@ -364,7 +363,7 @@ class ARCadeARViewController: UIViewController, ARSessionDelegate, MCSessionDele
             
             arView.scene.addAnchor(anchor!)
             
-            //            var ges = EntityTranslationGestureRecognizer(target: self, action: #selector(<#T##@objc method#>))
+            //            var ges = EntityTranslationGestureRecognizer(target: self, action: #selector(}))
             // Set gesture to the host striker.
             //            arView.installGestures(.translation, for: hostStriker)
             
@@ -484,22 +483,23 @@ class ARCadeARViewController: UIViewController, ARSessionDelegate, MCSessionDele
     
     private func addGestureToGuestStriker() {
         for anchor in arView.scene.anchors {
-            guard let guestStriker = anchor.children.first(where: {$0.name == "guestStriker"}) else { continue
+            guard let gu = anchor.children.first(where: {$0.name == "guestStriker"}) else { continue
             }
-            guestStriker.requestOwnership { [self] result in
+            gu.requestOwnership { [self] result in
                 if result == .granted {
-                    print("started")
                     arView.installGestures(.translation, for: arView.scene.anchors.first?.children.first(where: {$0.name == "guestStriker"})! as! HasCollision)
                     nonPlayerCharacterTimer?.invalidate()
-                    
+                    guestStriker.physicsBody?.isTranslationLocked = (false, true, true)
                 }
                 
             }
+            
         }
     }
     
     private func didReceiveGameState(state:GameState) {
         // [Guest] Update game state with received state.
+        print(state)
         if !(model.isHost ?? false) {
             model.gameState = state
             delegate?.modelChanged(model: model)
@@ -547,7 +547,12 @@ class ARCadeARViewController: UIViewController, ARSessionDelegate, MCSessionDele
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         
+        print(data)
+        
         if let receivedString = String(data: data, encoding: .ascii) {
+            
+            //            print(receivedString)
+            
             switch receivedString {
             case "hostTableAdded" :
                 
@@ -565,8 +570,6 @@ class ARCadeARViewController: UIViewController, ARSessionDelegate, MCSessionDele
             }
             
         }
-        
-        
         
         let decoder = JSONDecoder()
         if let receivedState = try?  decoder.decode(GameState.self, from: data) {
@@ -617,3 +620,4 @@ class ARCadeARViewController: UIViewController, ARSessionDelegate, MCSessionDele
     }
     
 }
+    
