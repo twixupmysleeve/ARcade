@@ -532,6 +532,7 @@ class ARCadeARViewController: UIViewController, ARSessionDelegate, MCSessionDele
         
         
         hostStriker.transform.matrix.columns.3.x = (session.currentFrame?.camera.transform)!.columns.3.x
+        guestStriker.transform.matrix.columns.3.x = (arView.scene.anchors.first?.children.first(where: {$0.name == "guestStriker"})!.transform.matrix.columns.3.x)!
         
     }
     
