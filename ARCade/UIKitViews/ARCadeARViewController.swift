@@ -474,7 +474,7 @@ class ARCadeARViewController: UIViewController, ARSessionDelegate, MCSessionDele
     private func tableSharedFromHost() {
         model.tableAddedInGuestDevice = true
         delegate?.modelChanged(model: model)
-        addGestureToGuestStriker()
+//        addGestureToGuestStriker()
         let guestTableAddedString = "guestTableAdded"
         guard let stringData = guestTableAddedString.data(using: .ascii) else {return}
         sendToAllPeers(stringData)
@@ -493,12 +493,12 @@ class ARCadeARViewController: UIViewController, ARSessionDelegate, MCSessionDele
                 if result == .granted {
 //                    arView.installGestures(.translation, for: arView.scene.anchors.first?.children.first(where: {$0.name == "guestStriker"})! as! HasCollision)
                     nonPlayerCharacterTimer?.invalidate()
-                    guestStriker.physicsBody?.isTranslationLocked = (false, true, true)
+//                    guestStriker.physicsBody?.isTranslationLocked = (false, true, true)
                 }
             }
         }
         
-        guestStriker.transform.matrix.columns.3.x = (arView.scene.anchors.first?.children.first(where: {$0.name == "guestStriker"})!.transform.matrix.columns.3.x)!
+//        guestStriker.transform.matrix.columns.3.x = (arView.scene.anchors.first?.children.first(where: {$0.name == "guestStriker"})!.transform.matrix.columns.3.x)!
 //        guestStriker.transform.matrix.columns.3.x = (session.currentFrame?.camera.transform)!.columns.3.x
 
     }
@@ -534,7 +534,11 @@ class ARCadeARViewController: UIViewController, ARSessionDelegate, MCSessionDele
         
         guard let newPos = decoy?.convert(transform: decoy!.transform, to: anchor) else {return}
         
+//        guestStriker.removeFromParent()
+        
         guestStriker.transform.matrix.columns.3.x = newPos.matrix.columns.3.x
+        
+//        anchor?.addChild(guestStriker)
         
         hostStriker.transform.matrix.columns.3.x = (session.currentFrame?.camera.transform)!.columns.3.x
         
