@@ -132,8 +132,10 @@ class ARCadeARViewController: UIViewController, ARSessionDelegate, MCSessionDele
     }
     
     var startButton:UIButton = {
-        var bu = UIButton(frame: CGRect(x: 100, y: 200, width: 200, height: 50))
+        var bu = UIButton(frame: CGRect(x: 250, y: 720, width: 100, height: 50))
         bu.layer.cornerRadius = 20
+        bu.setTitle("Start", for: .normal)
+        bu.setTitleColor(.blue, for: .normal)
         bu.backgroundColor = .white
         return bu
     }()

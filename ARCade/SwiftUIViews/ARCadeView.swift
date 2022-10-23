@@ -17,8 +17,8 @@ struct ARCadeView: View {
                 getGameText()
                 Spacer()
                 if model?.isHost == nil {
-                    Text("Once an another device lauch this game, you automatically connect it")
-                        .foregroundColor(.white)
+//                    Text("Once an another device lauch this game, you automatically connect it")
+//                        .foregroundColor(.white)
                 }
             }
         }
