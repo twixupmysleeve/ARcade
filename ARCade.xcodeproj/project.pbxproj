@@ -531,7 +531,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ARCade/Preview Content\"";
-				DEVELOPMENT_TEAM = 75GQ42D6M9;
+				DEVELOPMENT_TEAM = 8Y473664U9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ARCade/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ARCade;
@@ -541,7 +541,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hackgt.ARcade;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hackgt.ARcadeGT;
 				PRODUCT_NAME = ARCade;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -555,7 +555,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ARCade/Preview Content\"";
-				DEVELOPMENT_TEAM = 75GQ42D6M9;
+				DEVELOPMENT_TEAM = 8Y473664U9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ARCade/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ARCade;
@@ -565,7 +565,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hackgt.ARcade;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hackgt.ARcadeGT;
 				PRODUCT_NAME = ARCade;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

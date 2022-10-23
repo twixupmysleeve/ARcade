@@ -20,6 +20,7 @@ class ARCadeARViewController: UIViewController, ARSessionDelegate, MCSessionDele
     var arView:ARView!
     let coachingOverlay = ARCoachingOverlayView()
     
+    
     private static let serviceType = "ar-hockey"
     private var session: MCSession!
     private let myPeerID = MCPeerID(displayName: UIDevice.current.name)
@@ -40,6 +41,7 @@ class ARCadeARViewController: UIViewController, ARSessionDelegate, MCSessionDele
     }()
     
     var anchor:AnchorEntity?
+    var decoy: ModelEntity?
     
     var puck: ModelEntity!
     var hostStriker: ModelEntity!
@@ -530,9 +532,12 @@ class ARCadeARViewController: UIViewController, ARSessionDelegate, MCSessionDele
         
         guard let arCamera = session.currentFrame?.camera else { return }
         
+        guard let newPos = decoy?.convert(transform: decoy!.transform, to: anchor) else {return}
+        
+        guestStriker.transform.matrix.columns.3.x = newPos.matrix.columns.3.x
         
         hostStriker.transform.matrix.columns.3.x = (session.currentFrame?.camera.transform)!.columns.3.x
-        guestStriker.transform.matrix.columns.3.x = (arView.scene.anchors.first?.children.first(where: {$0.name == "guestStriker"})!.transform.matrix.columns.3.x) ?? guestStriker.transform.matrix.columns.3.x
+        
         
     }
     
@@ -540,6 +545,20 @@ class ARCadeARViewController: UIViewController, ARSessionDelegate, MCSessionDele
         for anchor in anchors {
             if let participantAnchor = anchor as? ARParticipantAnchor {
                 let anchorEntity = AnchorEntity(anchor: participantAnchor)
+            
+                
+             
+                let coloredSphere = ModelEntity(mesh: MeshResource.generateSphere(radius: 0),
+                                                materials: [SimpleMaterial(color: .white, isMetallic: true)])
+                anchorEntity.addChild(coloredSphere)
+                
+                decoy = coloredSphere
+                
+//                guestStriker.position.x = coloredSphere.convert(position: coloredSphere.position, to: guestStriker).x
+                
+//                guestStriker.position.z = guestStriker.position.z - 1
+//                coloredSphere.position.z = coloredSphere.position.z - 5
+                
                 arView.scene.addAnchor(anchorEntity)
             }
         }
