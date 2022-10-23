@@ -489,7 +489,7 @@ class ARCadeARViewController: UIViewController, ARSessionDelegate, MCSessionDele
             }
             gu.requestOwnership { [self] result in
                 if result == .granted {
-                    arView.installGestures(.translation, for: arView.scene.anchors.first?.children.first(where: {$0.name == "guestStriker"})! as! HasCollision)
+//                    arView.installGestures(.translation, for: arView.scene.anchors.first?.children.first(where: {$0.name == "guestStriker"})! as! HasCollision)
                     nonPlayerCharacterTimer?.invalidate()
                     guestStriker.physicsBody?.isTranslationLocked = (false, true, true)
                 }
@@ -532,7 +532,7 @@ class ARCadeARViewController: UIViewController, ARSessionDelegate, MCSessionDele
         
         
         hostStriker.transform.matrix.columns.3.x = (session.currentFrame?.camera.transform)!.columns.3.x
-        guestStriker.transform.matrix.columns.3.x = (arView.scene.anchors.first?.children.first(where: {$0.name == "guestStriker"})!.transform.matrix.columns.3.x)!
+        guestStriker.transform.matrix.columns.3.x = (arView.scene.anchors.first?.children.first(where: {$0.name == "guestStriker"})!.transform.matrix.columns.3.x) ?? guestStriker.transform.matrix.columns.3.x
         
     }
     
